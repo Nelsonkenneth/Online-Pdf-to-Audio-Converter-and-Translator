@@ -54,6 +54,8 @@ for uploaded_file in uploaded_files:
     lang_code_map = {
         "Afrikaans": "af",
         "Albanian": "sq",
+        "Arabic": "ar",
+        "English": "en",
         "French": "fr",
         "German": "de",
         "Spanish": "es",
