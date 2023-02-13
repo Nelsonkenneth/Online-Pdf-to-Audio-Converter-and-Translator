@@ -23,3 +23,47 @@ for uploaded_file in uploaded_files:
     no_of_pages = pdffile.getNumPages()
 
     string_words = ''
+    for pages in range(no_of_pages):
+        pi = pdffile.getPage(pages)
+        page = pdffile.getPage(pages)
+        content = page.extractText()
+        textonly = re.findall(r'[a-zA-Z0-9]+', content)
+        string_words =  " ".join(textonly)
+        print(string_words)
+
+    from googletrans import LANGUAGES
+    language_names =  {
+        "Afrikaans": "af",
+        "Albanian": "sq",
+        "Arabic": "ar",
+        "English": "en",
+        "French": "fr",
+        "German": "de",
+        "Spanish": "es",
+        "Portuguese": "pt",
+        "Mandarin": "zh-CN"
+    }
+    language = st.selectbox("Select a language:", language_names)
+    
+    
+    translator = Translator()
+    translator.detect(string_words)
+    result = translator.translate(string_words, dest=language)
+
+    # Map full language name to language code
+    lang_code_map = {
+        "Afrikaans": "af",
+        "Albanian": "sq",
+        "French": "fr",
+        "German": "de",
+        "Spanish": "es",
+        "Portuguese": "pt",
+        "Mandarin": "zh-CN"
+    }
+
+    lang_code = lang_code_map.get(language, "en")  # default to "en" if language not found
+    
+    audio = gTTS(text=result.text, lang=lang_code)
+    audio_file = 'listen_6_pdf.mp3'
+    audio.save(audio_file)
+    st.audio(audio_file)
