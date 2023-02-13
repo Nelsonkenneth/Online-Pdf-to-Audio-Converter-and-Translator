@@ -3,8 +3,8 @@ An online program that can read any PDF text file and convert it to an Audio fil
 # Installation 
 To install our Online PDF to Audio Converter and Translator do:
 
-https://github.com/Nelsonkenneth/Online-Pdf-to-Audio-Converter-and-Translator.git
+- https://github.com/Nelsonkenneth/Online-Pdf-to-Audio-Converter-and-Translator.git
 
-cd Online-Pdf-to-Audio-Converter-and-Translator
+- cd Online-Pdf-to-Audio-Converter-and-Translator
 
-python pip install online PDF to Audio Converter and Translator
+- python pip install online PDF to Audio Converter and Translator
